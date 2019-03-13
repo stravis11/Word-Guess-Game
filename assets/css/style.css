@@ -20,9 +20,10 @@ margin: 0 auto;
   border: none;
   border-radius: 15px;
   box-shadow: 4px 4px 4px #aaa;
-
   margin-top: 10px;
-  
+  margin-left: 70px;
+  display: flex;
+  justify-content: center;
 }
 
 .button:hover {background-color: white;}
@@ -104,7 +105,7 @@ margin-left: 5%;
 margin-bottom: 8%;
 }
 
-@media screen and (max-width: 1338px) and (min-width: 978px) {
+@media screen and (max-width: 980px) {
   html {
     background: url('../images/starwarsbackground-large.jpg') no-repeat center center fixed; 
     background-size: cover;
@@ -112,10 +113,15 @@ margin-bottom: 8%;
 
 }
 
-@media screen and (max-width: 979px) and (min-width: 768px) {
+@media screen and (max-width: 799px)  {
   body {
     background: url('../images/starwarsbackground-small.jpg') no-repeat center center fixed; 
     background-size: cover;
+  }
+
+  .button {
+    margin-left: 55px;
+    font-size: 12px;
   }
 }
 
@@ -128,7 +134,7 @@ margin-bottom: 8%;
   }
 
 
-@media screen and (max-width: 767px) {
+  @media screen and (max-width: 640px) {
   body {
     background: url('../images/starwarsbackground-smallest.jpg') no-repeat center center fixed; 
     background-size: cover;
@@ -141,4 +147,11 @@ margin-bottom: 8%;
   float: left;
   margin: 2% 8%;
   }
+
+  .button {
+    margin-left: 35px;
+    font-size: 10px;
+  }
 }
+
+
