@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Star Wars Hangman</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href="http://allfont.net/allfont.css?fonts=star-jedi" rel="stylesheet" type="text/css" />
+	
+
+</head>
+
+<body>
+	<div class="container">
+
+		<head>
+			<div class="head">
+				<h1>Star Wars Hangman</h1>
+			</div>
+		</head>
+		<main class="flexbox">
+			<div class="column leftContent">
+				<div class="imageChange"><img src="assets/images/image1.jpg" id="randImage"></div>
+			</div>
+			<div class="column rightContent">
+			<button class="button" onclick="startGame()">Click here to start</button>
+				<br>
+				<br>
+				<!-- <a href="#" onclick="startGame()"><img src="assets/images/press_keys.png" class="pressAnyKey"></a> -->
+				<h2>Wins : <span id="wins"></span></h2>
+				<br>
+				<h2>Current Word</h2>
+				<br>
+				<h2><span id="answer"></span></h2>
+				<br>
+				<h2>Number of Guesses Remaining</h2>
+				<br>
+				<h2><span id="count"></span></h2>
+				<br>
+				<h2>Letters Already Guessed</h2>
+				<br>
+				<h2><span id="letters"></span></h2>
+				<br>
+				<br>
+				<img src="assets/images/hangman1.jpg" id="hangmanImage">
+			</div>
+			
+		</main>
+
+	</div>
+
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</body>
+
+</html>
