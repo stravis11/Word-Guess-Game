@@ -1,7 +1,11 @@
 body {
   background: url('../images/starwarsbackground.jpg') no-repeat center center fixed; 
-  background-size: cover;
-}
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%; 
+  background-size: 100% 100%;
+} 
+
 
 .container {
 max-width: 960px;
@@ -106,18 +110,11 @@ margin-bottom: 8%;
 }
 
 @media screen and (max-width: 980px) {
-  html {
-    background: url('../images/starwarsbackground-large.jpg') no-repeat center center fixed; 
-    background-size: cover;
-  }
+  
 
 }
 
 @media screen and (max-width: 799px)  {
-  body {
-    background: url('../images/starwarsbackground-small.jpg') no-repeat center center fixed; 
-    background-size: cover;
-  }
 
   .button {
     margin-left: 55px;
@@ -135,10 +132,7 @@ margin-bottom: 8%;
 
 
   @media screen and (max-width: 640px) {
-  body {
-    background: url('../images/starwarsbackground-smallest.jpg') no-repeat center center fixed; 
-    background-size: cover;
-  }
+  
 
   h1 {
   font-family: 'Star Jedi', arial;
