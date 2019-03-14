@@ -1,4 +1,7 @@
 
+//Global variables
+var wins = 0;
+
 //Set initial left image
 
 document.getElementById('randImage').src = "assets/images/image3.jpg";
@@ -20,8 +23,8 @@ function startGame() {
 	for(var i=countDashes=0; i<randomPick.length; countDashes+=+(searchDashes===randomPick[i++]));
 	for(var i=countAnds=0; i<randomPick.length; countAnds+=+(searchAnds===randomPick[i++]));
 	var answerLength = randomPick.length - countDashes - countAnds;
-	console.log(searchDashes);
-	console.log(searchAnds);
+	// console.log(searchDashes);
+	// console.log(searchAnds);
 
 	//Set reminaing guesses
 	var counter = 10;
@@ -79,8 +82,6 @@ function startGame() {
 		var lettersGuessedArrEdited = lettersGuessedArrString.replace(/,/g,", ");
 		document.getElementById("letters").innerHTML = lettersGuessedArrEdited;
 
-
-
 		//Add keyboard listener
 		document.onkeyup = function (event) {
 			console.log(event.key);
@@ -91,7 +92,6 @@ function startGame() {
 
 			//Variable for counting hits
 			var hits = 0;
-
 
 			//If keystroke not used before, variable letter is passed through
 			if (uniq.length === your_array.length) {
