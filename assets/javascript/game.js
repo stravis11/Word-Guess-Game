@@ -36,7 +36,7 @@ function startGame() {
 	//Generate random left column image
 	var leftImages = ["assets/images/image1.jpg","assets/images/image2.jpg","assets/images/image4.jpg","assets/images/image5.jpg"];
 	var randImages = leftImages[Math.floor(Math.random() * leftImages.length)];
-	console.log(randImages);
+	// console.log(randImages);
 	document.getElementById('randImage').src = randImages;
 
 	//Replace random word with dashes
@@ -49,7 +49,7 @@ function startGame() {
 			answerArray[i] = "-";
 		}
 		else {
-			answerArray[i] = "_";
+			answerArray[i] = "-";
 		}
 	}
 	document.getElementById("answer").innerHTML = answerArray.join(" ");

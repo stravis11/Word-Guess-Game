@@ -44,7 +44,7 @@ margin: 0 auto;
 
 h1 {
 font-family:'Star Jedi', arial;
-font-size: 350%;
+font-size: 450%;
 text-shadow: 4px 4px 4px #aaa;
 float: left;
 margin: 4% 8%;
@@ -63,6 +63,7 @@ text-align: center;
 .head {
 margin-top: 10px;
 width: 100%;
+
 }
 
 main {
@@ -122,7 +123,6 @@ margin-bottom: 8%;
  }
 
   
-
   @media screen and (max-width: 640px) {
   
   h1 {
