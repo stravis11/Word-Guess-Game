@@ -16,6 +16,8 @@ max-width: 960px;
 margin: 0 auto;
 }
 
+
+
 .button {
   padding: 15px 25px;
   font-family:'Star Jedi', arial;
@@ -42,11 +44,12 @@ margin: 0 auto;
   transform: translateY(4px);
 }
 
+
 h1 {
 font-family:'Star Jedi', arial;
 font-size: 350%;
 text-shadow: 4px 4px 4px #aaa;
-float: lef;
+float: left;
 margin: 4% 8%;
 color:#feda4a;
 text-align: center;
@@ -69,12 +72,6 @@ main {
 width: 80%;
 margin: 20px 10%;
 border: dashed 5px #feda4a;
-}
-
-.pressyKey {
-width: 60%;
-height: auto;
-margin-left: 20%;
 }
 
 .leftContent {
@@ -127,22 +124,15 @@ margin-bottom: 8%;
 }
 
   h1 {
-  font-family: 'Star Jedi', arial;
   font-size: 480%;
-  color: #feda4a;
-  float: left;
   margin: 2% 8%;
   }
 
 
   @media screen and (max-width: 640px) {
   
-
   h1 {
-  font-family: 'Star Jedi', arial;
   font-size: 380%;
-  color: #feda4a;
-  float: left;
   margin: 2% 8%;
   }
 
