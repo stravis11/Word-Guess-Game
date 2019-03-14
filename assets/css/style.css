@@ -16,8 +16,6 @@ max-width: 960px;
 margin: 0 auto;
 }
 
-
-
 .button {
   padding: 15px 25px;
   font-family:'Star Jedi', arial;
@@ -43,7 +41,6 @@ margin: 0 auto;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-
 
 h1 {
 font-family:'Star Jedi', arial;
@@ -110,10 +107,6 @@ margin-left: 5%;
 margin-bottom: 8%;
 }
 
-@media screen and (max-width: 980px) {
-  
-
-}
 
 @media screen and (max-width: 799px)  {
 
@@ -121,13 +114,14 @@ margin-bottom: 8%;
     margin-left: 55px;
     font-size: 12px;
   }
-}
 
   h1 {
-  font-size: 480%;
-  margin: 2% 8%;
-  }
+    font-size: 480%;
+    margin: 2% 8%;
+    }
+ }
 
+  
 
   @media screen and (max-width: 640px) {
   

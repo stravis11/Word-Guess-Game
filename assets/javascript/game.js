@@ -1,14 +1,12 @@
-//Global variables
-var wins = 0;
 
 //Set initial left image
 
 document.getElementById('randImage').src = "assets/images/image3.jpg";
 
-function startGame() {
+//Start a new game
 
-	//Start a new game
-	
+function startGame() {
+		
 	//Array of words to guess
 	wordGuess = ["greedo","admiral+akbar","lando+calrissian","palpatine","tatooine","yoda","chewbacca","wookie","r2-d2","c-3po","han+solo","luke+skywalker","darth+vader","light+saber","jaba+the+hut","boba+fett","obi-wan+kenobi","princess+leia"];
 	
@@ -16,29 +14,32 @@ function startGame() {
 	randomPick = wordGuess[Math.floor(Math.random() * wordGuess.length)];
 	console.log(randomPick);
 
-	//count guessable characters
+	//Count word guess characters
 	var searchDashes = "-"
 	var searchAnds = "+"
 	for(var i=countDashes=0; i<randomPick.length; countDashes+=+(searchDashes===randomPick[i++]));
 	for(var i=countAnds=0; i<randomPick.length; countAnds+=+(searchAnds===randomPick[i++]));
 	var answerLength = randomPick.length - countDashes - countAnds;
+	console.log(searchDashes);
+	console.log(searchAnds);
 
+	//Set reminaing guesses
 	var counter = 10;
 	var win = 0;
 
-	//set initial values
+	//Set initial values
 	document.getElementById("count").innerHTML = counter;
 	document.getElementById("wins").innerHTML = wins;
 	document.getElementById('hangmanImage').src = 'assets/images/hangman1.jpg';
 	document.getElementById("letters").innerHTML = [];
 
-	//generate random lefthand image
+	//Generate random left column image
 	var leftImages = ["assets/images/image1.jpg","assets/images/image2.jpg","assets/images/image4.jpg","assets/images/image5.jpg"];
 	var randImages = leftImages[Math.floor(Math.random() * leftImages.length)];
 	console.log(randImages);
 	document.getElementById('randImage').src = randImages;
 
-	//replace random word with dashes
+	//Replace random word with dashes
 	var answerArray = randomPick.split("");
 
 	for (var i = 0; i < randomPick.length; i++) {
@@ -48,7 +49,7 @@ function startGame() {
 			answerArray[i] = "-";
 		}
 		else {
-			answerArray[i] = "-";
+			answerArray[i] = "_";
 		}
 	}
 	document.getElementById("answer").innerHTML = answerArray.join(" ");
@@ -58,7 +59,7 @@ function startGame() {
 
 	document.onkeydown = function (e) {
 		var keyPress;
-		//make array while ignoring duplicate characters
+		//Make an array while ignoring duplicate characters
 		if (typeof event !== 'undefined') {
 		    keyPress = event.keyCode;
 		}
@@ -72,7 +73,7 @@ function startGame() {
 	    	return a;
 	  	},[]);
 
-		//creating string of guessed words
+		//Creating string of guessed words
 		var lettersGuessedArrString = uniq.toString().toLowerCase();
 		letterAns = uniq.toString().toLowerCase().replace(/,/g,"");
 		var lettersGuessedArrEdited = lettersGuessedArrString.replace(/,/g,", ");
@@ -82,24 +83,22 @@ function startGame() {
 
 		//Add keyboard listener
 		document.onkeyup = function (event) {
-			// console.log(event.key);
+			console.log(event.key);
 			var keyStroke=event.key;
 
-
-
-			//variable for counting misses
+			//Variable for counting misses
 			var test = false;
 
-			//variable for counting hits
+			//Variable for counting hits
 			var hits = 0;
 
 
-			//if keystroke not used before, variable letter is passed through
+			//If keystroke not used before, variable letter is passed through
 			if (uniq.length === your_array.length) {
 				var letter = keyStroke;
 				console.log(uniq, your_array)
 			}
-			//if keystroke already used, remove last one used and set letter as empty
+			//If keystroke already used, remove last one used and set letter as empty
 			if (uniq.length !== your_array.length) {
 				your_array.pop();
 				console.log(uniq, your_array);
@@ -107,7 +106,7 @@ function startGame() {
 				test = true;
 			}
 
-			//making loop checking letter value with random word array
+			//Loop checking letter value with random word array
 			if (letter.length > 0) {
 			console.log(letter)
 
@@ -124,16 +123,18 @@ function startGame() {
 
 			var youWon = 0
 
-			//add how many correct hits were met
+			//Add how many correct hits were met
 			if (win < answerLength) {
 					win += hits;
 					document.getElementById("answer").innerHTML = answerArray.join(" ");
-					// console.log("win:" + win)
-					// console.log(answerLength)
+					console.log("win:" + win)
+					console.log(answerLength)
 			}
 			if (win === answerLength) {
 				//Change image to win
 				document.getElementById('hangmanImage').src = 'assets/images/youwin.png';
+				
+
 				//Change wins
 				youWon = 1;
 				wins = wins + youWon;
@@ -141,7 +142,7 @@ function startGame() {
 				
 				
 			}
-
+			
 			//Count wrong guesses and change image for loss
 			if (test == false) {
 				if (counter <= 10 && counter >= 0) {
@@ -156,16 +157,9 @@ function startGame() {
 					};
 				};
 			};
-
+			
 		};
 
 	};
 
-};
-
-
-
-//reset goes back to start
-function reset() {
-	startGame();
 };
